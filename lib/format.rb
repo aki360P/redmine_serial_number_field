@@ -1,4 +1,4 @@
-module SerialNumberField
+#module SerialNumberField
   class Format < Redmine::FieldFormat::Base
     NAME = 'serial_number'
 
@@ -119,4 +119,4 @@ module SerialNumberField
       end
 
   end
-end
+#end

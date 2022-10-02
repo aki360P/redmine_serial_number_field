@@ -1,7 +1,6 @@
 require_dependency 'issue'
 
-module SerialNumberField
-  module IssuePatch
+module IssuePatch
     extend ActiveSupport::Concern
 
     included do
@@ -16,8 +15,7 @@ module SerialNumberField
         new_serial_number = cf.format.generate_value(cf, self)
 
         if target_custom_value.present?
-          target_custom_value.update_attributes!(
-            :value => new_serial_number)
+          target_custom_value.update_attribute(:value, new_serial_number)
         end
       end
     end
@@ -34,13 +32,12 @@ module SerialNumberField
 
     def serial_number_fields
       editable_custom_fields.select do |value|
-        value.field_format == SerialNumberField::Format::NAME
+        value.field_format == Format::NAME
       end
     end
 
-  end
 end
 
-SerialNumberField::IssuePatch.tap do |mod|
+IssuePatch.tap do |mod|
   Issue.send :include, mod unless Issue.include?(mod)
 end

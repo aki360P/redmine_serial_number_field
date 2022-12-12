@@ -9,6 +9,6 @@ Redmine::Plugin.register :redmine_serial_number_field do
 end
 
 require File.expand_path('../lib/format', __FILE__)
-#require File.expand_path('../lib/serial_number_field', __FILE__)
+require File.expand_path('../lib/serial_number_field', __FILE__)
 require File.expand_path('../app/patches/issue_custom_field_patch', __FILE__)
 require File.expand_path('../app/patches/issue_patch', __FILE__)

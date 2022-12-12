@@ -1,10 +1,10 @@
 #require 'pathname'
 
-#module SerialNumberField
+module SerialNumberField
 #  def self.root
 #    @root ||= Pathname.new File.expand_path('..', File.dirname(__FILE__))
 #  end
-#end
+end
 
 # Load patches for Redmine
 #Rails.configuration.to_prepare do
